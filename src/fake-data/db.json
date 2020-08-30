@@ -1,0 +1,129 @@
+{
+  "categorias": [{
+      "id": 1,
+      "nome": "Categoria 1"
+    },
+    {
+      "id": 2,
+      "nome": "Categoria 2"
+    },
+    {
+      "id": 3,
+      "nome": "Categoria 3"
+    },
+    {
+      "id": 4,
+      "nome": "Categoria 4"
+    },
+    {
+      "id": 5,
+      "nome": "Categoria 5"
+    },
+    {
+      "id": 6,
+      "nome": "Categoria 6"
+    },
+    {
+      "id": 7,
+      "nome": "Categoria 7"
+    },
+    {
+      "id": 8,
+      "nome": "Categoria 8"
+    },
+    {
+      "id": 9,
+      "nome": "Categoria 9"
+    },
+    {
+      "id": 10,
+      "nome": "Categoria 10"
+    },
+    {
+      "id": 11,
+      "nome": "Comercio"
+    },
+    {
+      "id": 12,
+      "nome": "Alimentação"
+    },
+    {
+      "id": 13,
+      "nome": "Consultoria Financeira Empresarial"
+    },
+    {
+      "id": 14,
+      "nome": "Consultoria Financeira Pessoal"
+    },
+    {
+      "id": 15,
+      "nome": "Medicina"
+    }
+  ],
+
+  "servicos": [{
+      "id": 1,
+      "nome": "Bulba Store",
+      "rating": 5,
+      "subcategoria": ["Floricultura", "Casa natural", "Produtos organicos"],
+      "preco": 1,
+      "categoria": 11
+    },
+    {
+      "id": 2,
+      "nome": "Empresa do Seu Zé",
+      "rating": 3,
+      "subcategoria": ["Faz tudo", "Conselheiro amoroso"],
+      "preco": 1,
+      "categoria": 14
+    },
+    {
+      "id": 3,
+      "nome": "Istudiu da Zuleidi",
+      "rating": 4,
+      "subcategoria": ["Cabelereira", "Manicure", "Pedicure"],
+      "preco": 3,
+      "categoria": 11
+    },
+    {
+      "id": 4,
+      "nome": "Sorveteria Sorvete Derretido",
+      "rating": 4,
+      "subcategoria": ["sorvete"],
+      "preco": 1,
+      "categoria": 12
+    },
+    {
+      "id": 5,
+      "nome": "Conselheira Irene",
+      "rating": 1,
+      "subcategoria": [],
+      "preco": 2,
+      "categoria": 14
+    },
+    {
+      "id": 6,
+      "nome": "Dudies Programação",
+      "rating": 5,
+      "subcategoria": ["quokka", "docinhos"],
+      "preco": 3,
+      "categoria": 2
+    },
+    {
+      "id": 7,
+      "nome": "Petshop Mãe de Pet",
+      "rating": 4,
+      "subcategoria": ["petshop", "cahorros", "gatos"],
+      "preco": 2,
+      "categoria": 11
+    },
+    {
+      "id": 8,
+      "nome": "Veterinaria Alice",
+      "rating": 5,
+      "subcategoria": ["veterinaria", "cahorros", "gatos"],
+      "preco": 3,
+      "categoria": 11
+    }
+  ]
+}

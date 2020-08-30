@@ -1,0 +1,7 @@
+<div class="container-fluid py-2">
+  <div class="row row-cols-1 row-cols-4 justify-content-start align-items-center no-gutters">
+    <div class="col p-1" *ngFor="let serv of servicos">
+      <app-resumo-info-servico [servico]="serv"></app-resumo-info-servico>
+    </div>
+  </div>
+</div>

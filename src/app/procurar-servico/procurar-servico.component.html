@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-pesquisar-termo [labelInput]="'Pesquisar Serviço'" (termoPesquisadoChanged)="setarServicoPesquisado($event)">
+      </app-pesquisar-termo>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-lista-servicos [termoServico]="termoServicoPesquisado"></app-lista-servicos>
+    </div>
+  </div>
+</div>

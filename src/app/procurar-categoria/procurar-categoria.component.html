@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row justify-content-end  align-items-center">
+    <div class="col">
+      <app-pesquisar-termo [labelInput]="'Pesquisar Categoria'" (termoPesquisadoChanged)="setarCategoriaPesquisada($event)"></app-pesquisar-termo>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-lista-categorias [termoCategoria]="termoCategoriaPesquisada"></app-lista-categorias>
+    </div>
+  </div>
+</div>

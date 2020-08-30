@@ -1,0 +1,3 @@
+{
+  "/subcategorias/_search?name_like=:searchstring": "/subcategorias/?nome=:searchstring"
+}
