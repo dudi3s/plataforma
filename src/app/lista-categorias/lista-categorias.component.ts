@@ -13,10 +13,12 @@ export class ListaCategoriasComponent implements OnInit, OnChanges {
   public categorias: Array<CategoriasResponse> = new Array();
   private categoriasCopia: Array<CategoriasResponse> = new Array();
 
-  constructor(private reqServ: RequisicoesService, private router: Router) { }
+  constructor(private req: RequisicoesService, private router: Router) { }
 
   ngOnInit(): void {
     this.inicializarCategorias();
+    console.log(this.req.gerarURLCorHexa());
+
   }
 
   ngOnChanges(): void {
@@ -28,7 +30,7 @@ export class ListaCategoriasComponent implements OnInit, OnChanges {
   }
 
   private inicializarCategorias(): void {
-    this.reqServ.getCategorias().subscribe((cats: Array<CategoriasResponse>) => {
+    this.req.getCategorias().subscribe((cats: Array<CategoriasResponse>) => {
       this.categorias = cats;
       this.categoriasCopia = JSON.parse(JSON.stringify(cats));
     });
@@ -40,5 +42,9 @@ export class ListaCategoriasComponent implements OnInit, OnChanges {
 
   private filtrarCategorias(nomeCategoria: string): void {
     this.categorias = this.categoriasCopia.filter((cat: CategoriasResponse) => cat.nome.toLocaleLowerCase().includes(nomeCategoria.toLocaleLowerCase()));
+  }
+
+  public getURLColor(): string{
+    return this.req.gerarURLCorHexa();
   }
 }

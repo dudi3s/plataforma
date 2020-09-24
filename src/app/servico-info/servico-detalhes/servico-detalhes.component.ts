@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ServicosResponse } from './../../objetos/servicosResponse';
 
 @Component({
   selector: 'app-servico-detalhes',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servico-detalhes.component.scss']
 })
 export class ServicoDetalhesComponent implements OnInit {
+  @Input() servico: ServicosResponse;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }

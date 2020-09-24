@@ -67,7 +67,11 @@
       "rating": 5,
       "subcategoria": ["Floricultura", "Casa natural", "Produtos organicos"],
       "preco": 1,
-      "categoria": 11
+      "categoria": 11,
+      "num_contratos": 5,
+      "num_reviews": 1,
+      "endereco": "Rua André Lorenzo , 185, Bairro Centro, Não Me Toque, RS, Brasil",
+      "descricao": "A melhor floricultura da cidade, temos tulipas, alfaces, tulipas, cenouras, tulipas, e outras flores, como por exemplo: tulipas. Ja disse q temos tulipas Também salvamos quintais desastrosos"
     },
     {
       "id": 2,
@@ -75,7 +79,11 @@
       "rating": 3,
       "subcategoria": ["Faz tudo", "Conselheiro amoroso"],
       "preco": 1,
-      "categoria": 14
+      "categoria": 14,
+      "num_contratos": 30,
+      "num_reviews": 4,
+      "endereco": "Rua Sushi é Ruim, 65, Bairro Centro, Nova Iorque, PA, Brasil",
+      "descricao": "Seu zé faz tudo que é preciso, desde consertar tubulação da privada, até aconselhar as empresa tudo, podemos até te ajudar a arrumar um amorzinho. Confie no seu Zé, que ele resolve"
     },
     {
       "id": 3,
@@ -83,7 +91,11 @@
       "rating": 4,
       "subcategoria": ["Cabelereira", "Manicure", "Pedicure"],
       "preco": 3,
-      "categoria": 11
+      "categoria": 11,
+      "num_contratos": 105,
+      "num_reviews": 19,
+      "endereco": "Rua Kleiton Golfinho, 1995, Bairro Centro, São Paulo, SP, Brasil",
+      "descricao": "O ISTUDIU MAIS BOM DA SIDADI TODAAAAAA, VENHA CONHECER OS CORTIS ARTISTICUS DA ZUREIDI, VC VAI AMAR!!! ZUREIDI ATENDI A DOMICILIU, É SÓ CHAMA Q NOIS VAI"
     },
     {
       "id": 4,
@@ -91,7 +103,11 @@
       "rating": 4,
       "subcategoria": ["sorvete"],
       "preco": 1,
-      "categoria": 12
+      "categoria": 12,
+      "num_contratos": 609,
+      "num_reviews": 70,
+      "endereco": "Avenida Batata Azul, 120, Bairro Vila Nova, Porto Alegre, RS, Brasil",
+      "descricao": "Nós temos os melhores sorvetes derretidos aqui do bairro, ninguém faz sorvete como a gente, e o programador mandou eu usar um gerador de texto :("
     },
     {
       "id": 5,
@@ -99,7 +115,11 @@
       "rating": 1,
       "subcategoria": [],
       "preco": 2,
-      "categoria": 14
+      "categoria": 14,
+      "num_contratos": 1,
+      "num_reviews": 1,
+      "endereco": "Rua Coisa do Coisa Coisiado, 1234, Bairro Centro, Curitiba, PR, Brasil",
+      "descricao": "Lorem ipsum nulla integer libero molestie adipiscing enim donec litora eu quis etiam enim inceptos sapien, euismod rhoncus in molestie volutpat curabitur sollicitudin nulla orci nunc auctor fringilla netus. maecenas vitae venenatis nulla euismod etiam class donec, scelerisque ut vitae metus enim vestibulum. maecenas odio placerat eros ultricies auctor donec integer diam lacinia, vehicula taciti mollis netus primis urna pulvinar diam, mollis curabitur auctor ornare elit augue gravida vel. consectetur etiam justo aenean iaculis curabitur euismod tristique ipsum viverra euismod nullam blandit, posuere varius lobortis fermentum elit turpis curabitur etiam enim leo. "
     },
     {
       "id": 6,
@@ -107,7 +127,11 @@
       "rating": 5,
       "subcategoria": ["quokka", "docinhos"],
       "preco": 3,
-      "categoria": 2
+      "categoria": 2,
+      "num_contratos": 12,
+      "num_reviews": 6,
+      "endereco": "Rua Aquela Azul Ali, 12, Bairro Se Sabe, Cidade, RJ, Brasil",
+      "descricao": "Lorem ipsum sodales dolor luctus praesent iaculis rhoncus, fames aliquam porttitor porta curabitur. euismod fusce purus malesuada mollis arcu tellus mauris vitae torquent nunc, in libero semper curabitur odio eget elit eros scelerisque, massa auctor praesent arcu gravida suspendisse mattis mollis a. sem tellus viverra rhoncus malesuada torquent eget cras per, senectus cubilia sagittis habitant praesent donec platea, interdum lorem imperdiet donec per vehicula ullamcorper. urna consectetur nostra sociosqu vestibulum aenean lacus eleifend congue dolor viverra, condimentum sed non quis nulla a etiam rutrum molestie duis, suspendisse aenean purus interdum pellentesque vehicula eros rhoncus blandit. "
     },
     {
       "id": 7,
@@ -115,7 +139,11 @@
       "rating": 4,
       "subcategoria": ["petshop", "cahorros", "gatos"],
       "preco": 2,
-      "categoria": 11
+      "categoria": 11,
+      "num_contratos": 15,
+      "num_reviews": 4,
+      "endereco": "Rua Dois, 2, Bairro Centro, São Paulo, SP, Brasil",
+      "descricao": "Viu como os textos ficam sem graça e sem vida quando usamos o Lorem ipsum? Meus textos são obras de arte incompreendidas, que só será apreciada quando eu vir a falecer, e custará milhões, VOCÊS VERAM"
     },
     {
       "id": 8,
@@ -123,7 +151,62 @@
       "rating": 5,
       "subcategoria": ["veterinaria", "cahorros", "gatos"],
       "preco": 3,
-      "categoria": 11
+      "categoria": 11,
+      "num_contratos": 50,
+      "num_reviews": 25,
+      "endereco": "Rua Minas Novas, 118, Bairro Centro, Nova Hartz, RS, Brasil",
+      "descricao": "REVOLUÇÃO!!!!! AS DESCRIÇÕES SÃO MINHAS, EU QUE MANDO AQUI!!!! MUAHAHAHAHA!!!! NINGUEM MANDA EM MIM... sem contar a Livia... e a Fibi... e a Praga e o Veider... MAS VOCÊS NÃOOOOO!!! MUAHAHAHAHA!!!!"
+    }
+  ],
+  "comentarios": [{
+      "id": 1,
+      "servicoId": 6,
+      "usuario": {
+        "id": 1,
+        "nome": "Eduardo"
+      },
+      "nota": 5,
+      "texto": "Muito bom"
+    },
+    {
+      "id": 2,
+      "servicoId": 6,
+      "usuario": {
+        "id": 2,
+        "nome": "Cássio"
+      },
+      "nota": 4,
+      "texto": "Muito bom o serviço, gostei, mas eles atrasaram uma meia hora"
+    },
+    {
+      "id": 3,
+      "servicoId": 6,
+      "usuario": {
+        "id": 3,
+        "nome": "Luisa"
+      },
+      "nota": 3,
+      "texto": "A Livia gosto"
+    },
+    {
+      "id": 4,
+      "servicoId": 6,
+      "usuario": {
+        "id": 4,
+        "nome": "Claudinho"
+      },
+      "nota": 2,
+      "texto": "Demoraram pra caralho, e mais atrapalharam que ajudaram"
+    },
+    {
+      "id": 5,
+      "servicoId": 6,
+      "usuario": {
+        "id": 5,
+        "nome": "Bochecha"
+      },
+      "nota": 1,
+      "texto": "Não gostei"
     }
   ]
 }

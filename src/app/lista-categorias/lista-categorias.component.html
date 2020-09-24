@@ -1,8 +1,8 @@
-<div class="container-fluid py-2">
-  <div class="row row-cols-1 row-cols-4 justify-content-start align-items-center no-gutters">
+<div class="container-fluid py-2" *ngIf="categorias">
+  <div class="row row-cols-1 row-cols-6 justify-content-start align-items-center no-gutters">
     <div class="col p-1" *ngFor="let cat of categorias">
       <div class="btn card p-0" (click)="navegarServicosCategoria(cat.id)">
-        <img src="https://dummyimage.com/200x50/c2c2c2/000000" class="card-img-top" width="auto">
+        <img [src]="getURLColor()" class="card-img-top" width="auto" height="50px">
         <div class="card-footer text-center p-1 bg-dark text-white">
           <span>{{cat.nome}}</span>
         </div>

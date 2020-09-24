@@ -1,1 +1,63 @@
-<p>servico-detalhes works!</p>
+<div class="card" *ngIf="servico">
+  <img src="https://dummyimage.com/1920x350/599e5c/ffffff&text=+" class="card-img-top" alt="Imagem do Serviço">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h5>{{servico.nome}}</h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <ngb-rating [(rate)]="servico.rating" [max]="5" [readonly]="true"></ngb-rating>
+      </div>
+
+      <div class="col">
+        <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill == 5">
+            <span class="half" [style.width.%]="fill">&#36;</span>&#36;
+          </span>
+        </ng-template>
+
+        <ngb-rating [(rate)]="servico.preco" [max]="3" [starTemplate]="t" [readonly]="true"></ngb-rating>
+      </div>
+
+      <div class="col">
+        <!-- <i class="far fa-lg fa-frown text-danger" *ngIf="servico.rating <= 2"></i>
+        <i class="far fa-lg fa-meh text-warning" *ngIf="servico.rating == 3"></i> -->
+        <i class="far fa-lg fa-smile text-success" *ngIf="servico.rating > 3"></i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto" *ngFor="let subcat of servico.subcategoria">
+        <small>{{subcat}}</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <i class="far fa-comments mr-2"></i> <span>{{servico.num_reviews}} reviews</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-file-signature mr-2"></i> <span>{{servico.num_contratos}} contratos</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-map-marked-alt mr-2"></i> <span>{{servico.endereco}}</span>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-auto">
+        <button type="button" class="btn btn-lg btn-primary">Negociar Serviço</button>
+      </div>
+    </div>
+  </div>
+</div>

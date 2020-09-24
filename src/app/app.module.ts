@@ -1,3 +1,4 @@
+import { ResumoInfoServicoComponent } from './resumo-info-servico/resumo-info-servico.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,8 +14,8 @@ import { MenuComponent } from './menu/menu.component';
 import { PesquisarTermoComponent } from './pesquisar-termo/pesquisar-termo.component';
 import { ProcurarCategoriaComponent } from './procurar-categoria/procurar-categoria.component';
 import { ProcurarServicoComponent } from './procurar-servico/procurar-servico.component';
-import { ResumoInfoServicoComponent } from './resumo-info-servico/resumo-info-servico.component';
 import { ServicosModule } from './servico-info/servicos.module';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
 
 @NgModule({
@@ -22,13 +23,14 @@ import { ServicosModule } from './servico-info/servicos.module';
     AppComponent,
     LoginComponent,
     MenuComponent,
-    ResumoInfoServicoComponent,
     ProcurarServicoComponent,
     ListaServicosComponent,
     ListaCategoriasComponent,
     ProcurarCategoriaComponent,
     PesquisarTermoComponent,
     HomeComponent,
+    ResumoInfoServicoComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,

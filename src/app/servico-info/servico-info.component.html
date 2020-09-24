@@ -1,16 +1,26 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-auto">
-      <app-servico-detalhes></app-servico-detalhes>
+<div class="container-fluid" *ngIf="servico">
+  <div class="row align-items-start">
+    <div class="col-4">
+      <app-servico-detalhes [servico]="servico"></app-servico-detalhes>
     </div>
-    <div class="col">
-      <app-servico-portifolio></app-servico-portifolio>
-    </div>
-  </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col">
+          <app-servico-portifolio></app-servico-portifolio>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col">
-      <app-servico-comentarios></app-servico-comentarios>
+      <div class="row my-4">
+        <div class="col text-center">
+          <h1 class="lead"><strong>{{servico.descricao}}</strong></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <app-servico-comentarios [servicoId]="servico.id"></app-servico-comentarios>
+        </div>
+      </div>
     </div>
   </div>
 </div>

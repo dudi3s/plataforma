@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ComentarioServico } from './../../objetos/comentarioServico';
+import { RequisicoesService } from 'src/servicos/requisicoes.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-servico-comentarios',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servico-comentarios.component.scss']
 })
 export class ServicoComentariosComponent implements OnInit {
+  @Input() servicoId: number;
 
-  constructor() { }
+  public comentarios: Array<ComentarioServico>;
+
+  constructor(private req: RequisicoesService) { }
 
   ngOnInit(): void {
+    this.req.getServicoComentarios(this.servicoId).subscribe((comentariosResponse: Array<ComentarioServico>) => this.comentarios = comentariosResponse);
   }
-
 }

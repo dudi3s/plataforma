@@ -1,1 +1,30 @@
-<p>servico-comentarios works!</p>
+<div class="container-fluid my-2" *ngIf="comentarios">
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <h5>Reviews</h5>
+    </div>
+  </div>
+  <div class="card mb-2" *ngFor="let comentario of comentarios">
+    <div class="card-header">
+      <div class="row justify-content-between">
+        <div class="col-auto">
+          <span>Avaliação: </span>
+          <i class="far fa-lg fa-frown text-danger" *ngIf="comentario.nota <= 2"></i>
+          <i class="far fa-lg fa-meh text-warning" *ngIf="comentario.nota == 3"></i>
+          <i class="far fa-lg fa-smile text-success" *ngIf="comentario.nota > 3"></i>
+        </div>
+        <div class="col-auto">
+          <i class="fas fa-user mr-2"></i>
+          <span>{{comentario.usuario.nome}}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-body text-center p-1">
+      <span>{{ comentario.texto}}</span>
+    </div>
+  </div>
+
+
+</div>

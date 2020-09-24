@@ -1,3 +1,4 @@
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { ServicoInfoComponent } from './servico-info/servico-info.component';
 import { HomeComponent } from './home/home.component';
 import { ProcurarCategoriaComponent } from './procurar-categoria/procurar-categoria.component';
@@ -7,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'cadastro_usuario', component: CadastroUsuarioComponent },
   { path: 'categorias', component: ProcurarCategoriaComponent },
   { path: 'servicos', component: ProcurarServicoComponent },
   { path: 'servicos/categoria/:catId', component: ProcurarServicoComponent },

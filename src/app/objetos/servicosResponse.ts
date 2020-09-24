@@ -5,4 +5,8 @@ export interface ServicosResponse {
   subcategoria: Array<string>;
   preco: number;
   catgoria: number;
+  num_contratos: number;
+  num_reviews: number;
+  endereco: string;
+  descricao: string;
 }
