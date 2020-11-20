@@ -4,6 +4,7 @@ import { CategoriasResponse } from './../app/objetos/categoriasResponse';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Usuario } from 'src/app/objetos/usuarioPOJO';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class RequisicoesService {
 
   constructor(private http: HttpClient) { }
 
-  private uBase = '  http://localhost:3000/';
+  private uBase = 'http://localhost:3000/';
 
   public getCategorias(): Observable<Array<CategoriasResponse>> {
     return this.http.get<Array<CategoriasResponse>>(this.uBase + 'categorias');
@@ -33,5 +34,13 @@ export class RequisicoesService {
   public gerarURLCorHexa(): string {
     const value = Math.floor(Math.random() * 16777215).toString(16);
     return 'https://dummyimage.com/250x300/' + value + '/fff&text=+';
+  }
+
+  public cadastrarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.uBase + 'usuarios', { usuario });
+  }
+
+  public cadastrarServico(servico: ServicosResponse): Observable<ServicosResponse> {
+    return this.http.post<ServicosResponse>(this.uBase + 'servicos', { servico });
   }
 }

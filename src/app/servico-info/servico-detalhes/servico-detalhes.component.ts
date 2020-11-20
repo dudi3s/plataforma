@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServicosResponse } from './../../objetos/servicosResponse';
 
 @Component({
@@ -9,8 +10,12 @@ import { ServicosResponse } from './../../objetos/servicosResponse';
 export class ServicoDetalhesComponent implements OnInit {
   @Input() servico: ServicosResponse;
 
-  constructor() { }
+  constructor(private servicoRoteamento: Router) { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { }
+
+  public abrirChatNegociacao() {
+    this.servicoRoteamento.navigate(['/servicos/negociacao/' + this.servico.id])
+  }
 
 }

@@ -1,6 +1,7 @@
 import { Usuario } from './../objetos/usuarioPOJO';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./cadastro-usuario.component.scss']
 })
 export class CadastroUsuarioComponent implements OnInit {
-  private usuario: Usuario = new Usuario();
+  public usuario: Usuario = new Usuario();
 
   public cadastroForm = new FormGroup({
     nome: new FormControl(this.usuario.nome, Validators.required),
@@ -28,8 +29,45 @@ export class CadastroUsuarioComponent implements OnInit {
     foto: new FormControl(this.usuario.foto, Validators.required),
   });
 
+  public generoLista = ['Masculino', 'Feminino', 'Não-Binario', 'Outros'];
+
   constructor() { }
 
   ngOnInit(): void { }
 
+  public cadastrarUsuario() {
+    console.log(this.cadastroForm);
+
+    if (!this.cadastroForm.valid) {
+      alert('Todos os Campos são Obrigtórios!');
+      return;
+    }
+
+    this.usuario.nome = this.cadastroForm.get('nome').value;
+    this.usuario.nome = this.cadastroForm.get('apelido').value;
+    this.usuario.nome = this.cadastroForm.get('documento').value;
+    this.usuario.nome = this.cadastroForm.get('email').value;
+    this.usuario.nome = this.cadastroForm.get('sexo').value;
+    this.usuario.nome = this.cadastroForm.get('foto').value;
+
+
+    this.usuario.endereco.endereco = this.cadastroForm.get('endereco').get('endereco').value;
+    this.usuario.endereco.numero = this.cadastroForm.get('endereco').get('numero').value;
+    this.usuario.endereco.uf = this.cadastroForm.get('endereco').get('uf').value;
+    this.usuario.endereco.cidade = this.cadastroForm.get('endereco').get('cidade').value;
+    this.usuario.endereco.bairro = this.cadastroForm.get('endereco').get('bairro').value;
+    this.usuario.endereco.complemento = this.cadastroForm.get('endereco').get('complemento').value;
+
+    console.log(this.usuario);
+
+  }
+
+  public resetarCadastro() {
+    this.cadastroForm.reset();
+  }
+
+  public dataNascimentoSelecionada(data: NgbDate) {
+    this.cadastroForm.get('dataNascimento').setValue(data.year + '-' + data.month + '-' + data.day);
+    this.usuario.dataNascimento = data.year + '-' + data.month + '-' + data.day;
+  }
 }

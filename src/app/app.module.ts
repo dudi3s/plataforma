@@ -16,6 +16,9 @@ import { ProcurarCategoriaComponent } from './procurar-categoria/procurar-catego
 import { ProcurarServicoComponent } from './procurar-servico/procurar-servico.component';
 import { ServicosModule } from './servico-info/servicos.module';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { ComunicacaoNegocioComponent } from './comunicacao-negocio/comunicacao-negocio.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     PesquisarTermoComponent,
     HomeComponent,
     ResumoInfoServicoComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    CadastroServicoComponent,
+    SobreNosComponent,
+    ComunicacaoNegocioComponent
   ],
   imports: [
     BrowserModule,

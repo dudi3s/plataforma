@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center mb-4">
+        <div class="col-auto">
+            <label class="display-4">Cadastro Serviço</label>
+        </div>
+    </div>
+
+    <div class="row justify-content-between align-items-center card-group my-2">
+        <div class="col" *ngFor="let foto of fotosServico; let i=index">
+            <div class="card">
+                <div class="card-body text-center">
+                    {{foto}}
+                </div>
+            </div>
+        </div>
+        <div class="col-auto mr-md-auto">
+            <button class="btn btn-primary">
+                <i class="fas fa-camera"></i> Adicionar Foto
+            </button>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col">
+            <label> Nome Serviço: </label>
+            <input type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center my-2">
+        <div class="col">
+            <label> Categoria: </label>
+            <select class="custom-select">
+                <option [value]="i+1" *ngFor="let cat of categorias; let i=index">{{cat}}</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <label> SubCategorias: </label>
+            <select class="custom-select" multiple>
+                <option [value]="i+1" *ngFor="let subCat of subcategoris; let i=index">{{subCat}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col">
+            <label> Descrição: </label>
+            <textarea class="form-control" rows="5"></textarea>
+        </div>
+    </div>
+
+    <div class="row my-4 justify-content-center align-items-center">
+        <div class="col-auto">
+            <button type="button" class="btn btn-success">
+                <i class="fas fa-save"></i> Cadastrar
+            </button>
+        </div>
+
+        <div class="col-auto">
+            <button type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i> Cancelar
+            </button>
+        </div>
+    </div>
+
+
+</div>
