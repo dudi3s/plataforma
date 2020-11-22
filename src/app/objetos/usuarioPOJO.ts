@@ -20,7 +20,7 @@ export class Usuario {
     this.documento = '';
     this.email = '';
     this.sexo = '';
-    this.endereco = null;
+    this.endereco = new Endereco();
     this.dataNascimento = '';
     this.foto = 'data:image/png;base64,' + this.img;
   }
