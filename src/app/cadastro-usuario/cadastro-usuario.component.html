@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row justify-content-center align-items-center">
     <div class="col-auto">
       <label class="display-4">Cadastro Usuário</label>
@@ -8,9 +8,11 @@
   <div [formGroup]="cadastroForm" class="needs-validation" novalidate>
     <div class="row justify-content-center my-4">
       <div class="col-auto">
-        <button type="button" class="btn btn-sm btn-secondary" style="position: absolute; z-index: 0;">Alterar</button>
+        <button type="button" class="btn btn-sm btn-secondary" style="position: absolute; z-index: 0;"
+          [ngbPopover]="popConteudoUploadImagem" [popoverTitle]="popTituloUploadImagem" [autoClose]="false"
+          triggers="manual" #popUploadImagem="ngbPopover" (click)="popUploadImagem.open()">Alterar</button>
 
-        <img alt="foto_perfil" class="rounded-circle" [src]="usuario.foto" width="250" height="250" />
+        <img alt="foto_perfil" class="rounded-circle" [src]="cadastroForm.get('foto').value" width="250" height="250" />
 
       </div>
     </div>
@@ -53,7 +55,7 @@
               Data de Nascimento é Obrigatória. Formato: AAAA-MM-DD
             </div>
           </div>
-         
+
         </div>
       </div>
     </div>
@@ -88,8 +90,8 @@
         </select>
         <div class="invalid-feedback">
           Campo Obrigatório.
-         </div>
-      
+        </div>
+
       </div>
     </div>
 
@@ -99,54 +101,56 @@
           <label>
             Rua/Avenida:
           </label>
-          <input type="text" class="form-control" formControlName="rua">
+          <input type="text" class="form-control" formControlName="rua" [ngClass]="getValidacaoEndereco('rua')">
           <div class="invalid-feedback">
             Campo Obrigatório.
-           </div>
+          </div>
         </div>
 
         <div class="col-1">
           <label>
             Número:
           </label>
-          <input type="text" class="form-control" formControlName="numero">
+          <input type="text" class="form-control" formControlName="numero" [ngClass]="getValidacaoEndereco('numero')">
           <div class="invalid-feedback">
             Somente Números.
-           </div>
+          </div>
         </div>
 
         <div class="col-2">
           <label>
             Bairro:
           </label>
-          <input type="text" class="form-control" formControlName="bairro">
+          <input type="text" class="form-control" formControlName="bairro" [ngClass]="getValidacaoEndereco('bairro')">
           <div class="invalid-feedback">
             Campo Obrigatório.
-           </div>
+          </div>
         </div>
 
         <div class="col-2">
           <label>
             Complemento:
           </label>
-          <input type="text" class="form-control" formControlName="complemento">
+          <input type="text" class="form-control" formControlName="complemento"
+            [ngClass]="getValidacaoEndereco('complemento')">
         </div>
 
         <div class="col-2">
           <label>
             Cidade:
           </label>
-          <input type="text" class="form-control" formControlName="cidade">
+          <input type="text" class="form-control" formControlName="cidade" [ngClass]="getValidacaoEndereco('cidade')">
           <div class="invalid-feedback">
             Campo Obrigatório.
-           </div>
+          </div>
         </div>
 
         <div class="col-2">
           <label>
             Estado:
           </label>
-          <select name="estados-brasil" class="custom-select" formControlName="uf" width="3">
+          <select name="estados-brasil" class="custom-select" formControlName="uf" width="3"
+            [ngClass]="getValidacaoEndereco('uf')">
             <option value="AC">AC</option>
             <option value="AL">AL</option>
             <option value="AP">AP</option>
@@ -178,7 +182,7 @@
 
           <div class="invalid-feedback">
             Campo Obrigatório.
-           </div>s
+          </div>
         </div>
       </div>
     </div>
@@ -198,3 +202,29 @@
     </div>
   </div>
 </div>
+
+<ng-template #popTituloUploadImagem>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-auto">
+      <span>Nova Imagem de Perfil</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #popConteudoUploadImagem>
+  <div class="row justify-content-center align-items-center mb-2">
+    <div class="col-auto">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputNovaImagem" aria-describedby="inputNovaImagemPerfil"
+          (change)="novaImagemSelecionada($event.target.files, popUploadImagem)">
+        <label class="custom-file-label" for="inputNovaImagem" data-browse="Pesquisar">Escolher Imagem</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-auto">
+      <button type="button" class="btn btn-danger" (click)="popUploadImagem.close()">Cancelar</button>
+    </div>
+  </div>
+</ng-template>

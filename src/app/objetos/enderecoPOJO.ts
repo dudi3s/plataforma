@@ -7,7 +7,6 @@ export class Endereco {
   complemento: string;
   constructor() {
     this.rua = '';
-    this.numero = 0;
     this.bairro = '';
     this.cidade = '';
     this.uf = '';

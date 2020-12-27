@@ -1,7 +1,9 @@
 import { Usuario } from './../objetos/usuarioPOJO';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDate, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
+import { RequisicoesService } from 'src/servicos/requisicoes.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -18,12 +20,12 @@ export class CadastroUsuarioComponent implements OnInit {
     email: new FormControl(this.usuario.email, [Validators.required, Validators.email]),
     sexo: new FormControl(this.usuario.sexo, Validators.required),
     endereco: new FormGroup({
-      rua: new FormControl('', Validators.required),
-      numero: new FormControl('', Validators.pattern(/(\d)+/)),
-      bairro: new FormControl('', Validators.required),
-      cidade: new FormControl('', Validators.required),
-      uf: new FormControl('', Validators.required),
-      complemento: new FormControl('', Validators.required)
+      rua: new FormControl(this.usuario.endereco.rua, Validators.required),
+      numero: new FormControl(this.usuario.endereco.numero, [Validators.pattern(/(\d)+/), Validators.required]),
+      bairro: new FormControl(this.usuario.endereco.bairro, Validators.required),
+      cidade: new FormControl(this.usuario.endereco.cidade, Validators.required),
+      uf: new FormControl(this.usuario.endereco.uf, Validators.required),
+      complemento: new FormControl(this.usuario.endereco.complemento, Validators.required)
     }),
     dataNascimento: new FormControl(this.usuario.dataNascimento, Validators.required),
     foto: new FormControl(this.usuario.foto, Validators.required),
@@ -31,12 +33,11 @@ export class CadastroUsuarioComponent implements OnInit {
 
   public generoLista = ['Masculino', 'Feminino', 'Não-Binario', 'Outros'];
 
-  constructor() { }
+  constructor(private req: RequisicoesService) { }
 
   ngOnInit(): void { }
 
   public cadastrarUsuario() {
-    console.log(this.cadastroForm);
 
     if (!this.cadastroForm.valid) {
       alert('Todos os Campos são Obrigtórios!');
@@ -49,6 +50,7 @@ export class CadastroUsuarioComponent implements OnInit {
     this.usuario.email = this.cadastroForm.get('email').value;
     this.usuario.sexo = this.cadastroForm.get('sexo').value;
     this.usuario.foto = this.cadastroForm.get('foto').value;
+    this.usuario.dataNascimento = this.cadastroForm.get('dataNascimento').value;
 
     this.usuario.endereco.rua = this.cadastroForm.get('endereco').get('rua').value;
     this.usuario.endereco.numero = this.cadastroForm.get('endereco').get('numero').value;
@@ -57,12 +59,17 @@ export class CadastroUsuarioComponent implements OnInit {
     this.usuario.endereco.bairro = this.cadastroForm.get('endereco').get('bairro').value;
     this.usuario.endereco.complemento = this.cadastroForm.get('endereco').get('complemento').value;
 
-    console.log(this.usuario);
-
+    this.req.cadastrarUsuario(this.usuario)
+      .subscribe(() => {
+        alert('Usuário Cadastrado com sucesso!');
+      },
+        (erro: HttpErrorResponse) => alert('Erro ao cadastrar usuário. Status: (' + erro.status + ')')
+      );
   }
 
   public resetarCadastro() {
     this.cadastroForm.reset();
+    this.cadastroForm.get('foto').setValue(this.usuario.foto);
   }
 
   public dataNascimentoSelecionada(data: NgbDate) {
@@ -78,5 +85,27 @@ export class CadastroUsuarioComponent implements OnInit {
     }
 
     return '';
+  }
+
+  public getValidacaoEndereco(campo: string): string {
+    if ((this.cadastroForm.get('endereco').get(campo).invalid) && (this.cadastroForm.get('endereco').get(campo).dirty)) {
+      return 'is-invalid';
+    } else if (this.cadastroForm.get('endereco').get(campo).valid) {
+      return 'is-valid';
+    }
+
+    return '';
+  }
+
+  public novaImagemSelecionada(event: FileList, pop: NgbPopover) {
+
+    let file = event[0];
+    let reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.cadastroForm.get('foto').setValue(reader.result);
+      pop.close();
+    };
   }
 }

@@ -1,5 +1,6 @@
 {
-  "categorias": [{
+  "categorias": [
+    {
       "id": 1,
       "nome": "Categoria 1"
     },
@@ -60,7 +61,8 @@
       "nome": "Medicina"
     }
   ],
-  "servicos": [{
+  "servicos": [
+    {
       "id": 1,
       "nome": "Bulba Store",
       "rating": 5,
@@ -181,7 +183,8 @@
       "descricao": "REVOLUÇÃO!!!!! AS DESCRIÇÕES SÃO MINHAS, EU QUE MANDO AQUI!!!! MUAHAHAHAHA!!!! NINGUEM MANDA EM MIM... sem contar a Livia... e a Fibi... e a Praga e o Veider... MAS VOCÊS NÃOOOOO!!! MUAHAHAHAHA!!!!"
     }
   ],
-  "comentarios": [{
+  "comentarios": [
+    {
       "id": 1,
       "servicoId": 6,
       "usuario": {
@@ -232,5 +235,6 @@
       "texto": "Não gostei"
     }
   ],
-  "usuarios": []
+  "usuarios": [
+  ]
 }
